@@ -60,6 +60,10 @@ dkms.conf
 *.filters
 *.user
 
+# VsCode Debug
+# /.vscode
+*.exe
+
 # Audio Files
 *.pcm
 *.pk
