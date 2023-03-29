@@ -6,18 +6,18 @@ class Solution
 public:
     int fib(int n)
     {
-        if (n == 0)
-            return 0;
-        if (n == 1)
-            return 1;
-        int p = 0, q = 1;
-        int ans = 0;
-        for (int i = 1; i < n; i++)
+        if (n <= 1)
+            return n;
+        int dp[2];
+        dp[0] = 0;
+        dp[1] = 1;
+        int sum = 0;
+        for (int i = 2; i <= n; i++)
         {
-            ans = p + q;
-            p = q;
-            q = ans;
+            sum = dp[0] + dp[1];
+            dp[0] = dp[1];
+            dp[1] = sum;
         }
-        return ans;
+        return sum;
     }
 };
