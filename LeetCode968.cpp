@@ -18,7 +18,7 @@ public:
     int res;
     int traversal(TreeNode *cur)
     {
-        if (nur == nullptr)
+        if (cur == nullptr)
             return 2;
         int left = traversal(cur->left);
         int right = traversal(cur->right);
