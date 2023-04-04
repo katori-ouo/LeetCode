@@ -35,19 +35,24 @@ class Solution
 public:
     vector<int> nextGreaterElements(vector<int> &nums)
     {
-        vector<int> res(nums.size(), -1);
-        if (nums.size() == 0)
+        int len = nums.size();
+        vector<int> res(len, -1);
+        if (len == 1)
             return res;
         stack<int> st;
         st.push(0);
-        for (int i = 1; i < nums.size() * 2; i++)
+        for (int i = 1; i < len * 2; i++)
         {
-            while (!st.empty() && nums[i % nums.size()] > nums[st.top()])
+            if (nums[i % len] > nums[st.top()])
             {
-                res[st.top()] = nums[i % nums.size()];
-                st.pop();
+                while (!st.empty() && nums[i % len] > nums[st.top()])
+                {
+                    int idx = st.top();
+                    st.pop();
+                    res[idx] = nums[i % len];
+                }
             }
-            st.push(i % nums.size());
+            st.push(i % len);
         }
         return res;
     }

@@ -51,7 +51,9 @@ public:
         for (int i = 1; i < heights.size(); i++)
         {
             if (heights[i] > heights[st.top()])
+            {
                 st.push(i);
+            }
             else if (heights[i] == heights[st.top()])
             {
                 st.pop();
@@ -68,8 +70,7 @@ public:
                         int left = st.top();
                         int right = i;
                         int w = right - left - 1;
-                        int h = heights[mid];
-                        res = max(res, w * h);
+                        res = max(res, w * heights[mid]);
                     }
                 }
                 st.push(i);

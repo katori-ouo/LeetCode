@@ -26,10 +26,10 @@ public:
     }
     */
 
-    int countInRange(vector<int> &nums, int lo, int hi, int num)
+    int cnt(vector<int> &nums, int left, int right, int num)
     {
         int cnt = 0;
-        for (int i = lo; i <= hi; i++)
+        for (int i = left; i <= right; i++)
         {
             if (nums[i] == num)
                 cnt++;
@@ -37,22 +37,25 @@ public:
         return cnt;
     }
 
-    int majorElementRec(vector<int> &nums, int lo, int hi)
+    int majorityElementRange(vector<int> &nums, int left, int right)
     {
-        if (lo == hi)
-            return nums[lo];
-        int mid = lo + (hi - lo) / 2;
-        int left = majorElementRec(nums, lo, mid);
-        int right = majorElementRec(nums, mid + 1, hi);
         if (left == right)
-            return left;
-        int leftCount = countInRange(nums, lo, hi, left);
-        int rightCount = countInRange(nums, lo, hi, right);
-        return leftCount > rightCount ? left : right;
+            return nums[left];
+        int mid = left + (right - left) / 2;
+        int leftNum = majorityElementRange(nums, left, mid);
+        int rightNum = majorityElementRange(nums, mid + 1, right);
+        if (leftNum == rightNum)
+            return leftNum;
+        else
+        {
+            int leftCnt = cnt(nums, left, right, leftNum);
+            int rightCnt = cnt(nums, left, right, rightNum);
+            return leftCnt > rightCnt ? leftNum : rightNum;
+        }
     }
 
     int majorityElement(vector<int> &nums)
     {
-        return majorElementRec(nums, 0, nums.size() - 1);
+        return majorityElementRange(nums, 0, nums.size() - 1);
     }
 };

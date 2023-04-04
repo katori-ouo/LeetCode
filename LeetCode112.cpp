@@ -14,30 +14,28 @@ struct TreeNode
 class Solution
 {
 public:
-    bool traversal(TreeNode *node, int num)
+    bool backtracking(TreeNode *cur, int sum)
     {
-        num -= node->val;
-        if (!node->left && !node->right)
+        sum -= cur->val;
+        if (!cur->left && !cur->right)
         {
-            if (num == 0)
+            if (sum == 0)
                 return true;
             else
                 return false;
         }
-        bool leftPath = false, rightPath = false;
-        if (node->left)
-            leftPath = traversal(node->left, num);
-        if (node->right)
-            rightPath = traversal(node->right, num);
-        bool res = leftPath || rightPath;
-        return res;
+        bool leftRes = false, rightRes = false;
+        if (cur->left)
+            leftRes = backtracking(cur->left, sum);
+        if (cur->right)
+            rightRes = backtracking(cur->right, sum);
+        return (leftRes || rightRes);
     }
 
     bool hasPathSum(TreeNode *root, int targetSum)
     {
         if (root == nullptr)
             return false;
-        bool res = traversal(root, targetSum);
-        return res;
+        return backtracking(root, targetSum);
     }
 };

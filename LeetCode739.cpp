@@ -32,15 +32,22 @@ class Solution
 public:
     vector<int> dailyTemperatures(vector<int> &temperatures)
     {
+        int len = temperatures.size();
+        vector<int> res(len, 0);
+        if (len == 1)
+            return res;
         stack<int> st;
-        vector<int> res(temperatures.size(), 0);
         st.push(0);
-        for (int i = 1; i < temperatures.size(); i++)
+        for (int i = 1; i < len; i++)
         {
-            while (!st.empty() && temperatures[i] > temperatures[st.top()])
+            if (temperatures[i] > temperatures[st.top()])
             {
-                res[st.top()] = i - st.top();
-                st.pop();
+                while (!st.empty() && temperatures[i] > temperatures[st.top()])
+                {
+                    int idx = st.top();
+                    st.pop();
+                    res[idx] = i - idx;
+                }
             }
             st.push(i);
         }
