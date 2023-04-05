@@ -43,7 +43,7 @@ public:
         }
     }
 
-    void isConnected(int x, int y)
+    bool isConnected(int x, int y)
     {
         return find(x) == find(y);
     }
