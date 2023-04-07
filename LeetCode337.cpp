@@ -14,23 +14,22 @@ struct TreeNode
 class Solution
 {
 public:
-    vector<int> robTree(TreeNode *cur)
+    vector<int> robTree(TreeNode *root)
     {
-        // dp[0]:不抢该结点时的最高金额
-        // dp[1]:抢该结点时的最高金额
-        vector<int> dp(2, 0);
-        if (cur == nullptr)
-            return dp;
-        vector<int> leftVal = robTree(cur->left);
-        vector<int> rightVal = robTree(cur->right);
-        dp[0] = max(leftVal[0], leftVal[1]) + max(rightVal[0], rightVal[1]);
-        dp[1] = cur->val + leftVal[0] + rightVal[0];
-        return dp;
+        vector<int> val(2, 0);
+        // val[0]:抢该结点, val[1]:不抢该结点
+        if (root == nullptr)
+            return val;
+        vector<int> leftVal = robTree(root->left);
+        vector<int> rightVal = robTree(root->right);
+        val[0] = root->val + leftVal[1] + rightVal[1];
+        val[1] = max(leftVal[0], leftVal[1]) + max(rightVal[0], rightVal[1]);
+        return val;
     }
 
     int rob(TreeNode *root)
     {
-        vector<int> dp = robTree(root);
-        return max(dp[0], dp[1]);
+        vector<int> res = robTree(root);
+        return max(res[0], res[1]);
     }
 };

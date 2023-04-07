@@ -12,23 +12,26 @@ public:
             return a[1] < b[1];
         return a[0] < b[0];
     }
+
     int eraseOverlapIntervals(vector<vector<int>> &intervals)
     {
-        if (intervals.size() == 1)
-            return 0;
+        int len = intervals.size();
+        int cnt = 0;
         sort(intervals.begin(), intervals.end(), cmp);
-        int res = 0;
-        int curEnd = intervals[0][1];
-        for (int i = 1; i < intervals.size(); i++)
+        int cover = intervals[0][1];
+        for (int i = 1; i < len; i++)
         {
-            if (intervals[i][0] >= curEnd)
-                curEnd = intervals[i][1];
+            int from = intervals[i][0], to = intervals[i][1];
+            if (from < cover)
+            {
+                cnt++;
+                cover = min(to, cover);
+            }
             else
             {
-                res++;
-                curEnd = min(curEnd, intervals[i][1]);
+                cover = to;
             }
         }
-        return res;
+        return cnt;
     }
 };
