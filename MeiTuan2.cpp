@@ -3,23 +3,16 @@
 using namespace std;
 int main()
 {
-	int a, b, m, x;
+	long long a, b, m, x, i;
 	cin >> a >> b >> m >> x;
-	//vector<int> nums;
-	x = (a * x + b) % m;
-	//nums.push_back(x);
-	int begin = x;
-	int ans = 1;
-	while (true)
+	vector<int> flags(100010, 0);
+	for (i = 1; i < 1e8; i++)
 	{
 		x = (a * x + b) % m;
-		//nums.push_back(x);
-		if (x == begin)
-		{
-			//ans = nums.size() - 1;
+		if (flags[x])
 			break;
-		}
-		else ans++;
+		else
+			flags[x] = i;
 	}
-	cout << ans << endl;
+	cout << i - flags[x] << '\n';
 }

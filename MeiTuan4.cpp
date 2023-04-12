@@ -4,8 +4,8 @@
 using namespace std;
 int main()
 {
-    int n;
-    long long k;
+    int n, i;
+    long long k, t;
     cin >> n >> k;
     vector<int> nums(n, 0);
     for (int i = 0; i < n; i++)
@@ -13,7 +13,14 @@ int main()
         cin >> nums[i];
     }
     sort(nums.begin(), nums.end());
-    int idx1 = (k - 1) / n;
-    int idx2 = (k - 1) % n;
-    cout << "(" << nums[idx1] << "," << nums[idx2] << ")" << endl;
+    k--;
+    for (i = 0; i < n; i += t)
+    {
+        for (t = 1; nums[i] == nums[i + t]; t++)
+            ;
+        if (t * n > k)
+            break;
+        k -= t * n;
+    }
+    cout << "(" << nums[i] << "," << nums[k / t] << ")\n";
 }
