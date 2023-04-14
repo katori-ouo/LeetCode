@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
-
+/* 贪心算法 划分字母区间 */
 class Solution
 {
 public:

@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
+/* 贪心算法 无重叠区间 */
 class Solution
 {
 public:

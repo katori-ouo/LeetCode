@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
+/* K次取反后最大数组和 */
 class Solution
 {
 public:

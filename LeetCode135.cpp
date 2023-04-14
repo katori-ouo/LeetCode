@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/* 贪心算法 分发糖果 */
 class Solution
 {
 public:

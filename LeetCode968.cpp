@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/* 贪心算法 监控二叉树 */
 struct TreeNode
 {
     int val;

@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
+/* 贪心算法 分发饼干 */
 class Solution
 {
 public:

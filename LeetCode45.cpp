@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/* 贪心算法 跳跃游戏 */
 class Solution
 {
 public:

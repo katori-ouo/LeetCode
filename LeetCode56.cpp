@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
+/* 合并重叠区间 */
 class Solution
 {
 public:
