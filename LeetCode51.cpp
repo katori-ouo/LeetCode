@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
-
+/* 回溯 N皇后 */
 class Solution
 {
 public:

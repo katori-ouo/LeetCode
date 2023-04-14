@@ -1,21 +1,26 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
-
-class Solution {
+/* 回溯 组合总和 */
+class Solution
+{
 public:
 	vector<vector<int>> res;
 	vector<int> path;
 	int sum;
 
-	void backtracking(vector<int>& candidates, int target, int sum, int idx) {
-		if (sum == target) {
+	void backtracking(vector<int> &candidates, int target, int sum, int idx)
+	{
+		if (sum == target)
+		{
 			res.push_back(path);
 			return;
 		}
-		for (int i = idx; i < candidates.size() && sum + candidates[i] <= target; i++) {
-			if (i > idx && candidates[i] == candidates[i - 1]) {
+		for (int i = idx; i < candidates.size() && sum + candidates[i] <= target; i++)
+		{
+			if (i > idx && candidates[i] == candidates[i - 1])
+			{
 				continue;
 			}
 			sum += candidates[i];
@@ -26,7 +31,8 @@ public:
 		}
 	}
 
-	vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+	vector<vector<int>> combinationSum2(vector<int> &candidates, int target)
+	{
 		res.clear();
 		path.clear();
 		sum = 0;

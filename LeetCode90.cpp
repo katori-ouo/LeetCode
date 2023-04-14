@@ -1,20 +1,25 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
-
-class Solution {
+/* 回溯 集合的所有子集 */
+class Solution
+{
 public:
 	vector<vector<int>> res;
 	vector<int> path;
 
-	void backtracking(vector<int>& nums, int idx) {
+	void backtracking(vector<int> &nums, int idx)
+	{
 		res.push_back(path);
-		if (idx >= nums.size()) {
+		if (idx >= nums.size())
+		{
 			return;
 		}
-		for (int i = idx; i < nums.size(); i++) {
-			if (i > idx && nums[i] == nums[i - 1]) {
+		for (int i = idx; i < nums.size(); i++)
+		{
+			if (i > idx && nums[i] == nums[i - 1])
+			{
 				continue;
 			}
 			path.push_back(nums[i]);
@@ -23,7 +28,8 @@ public:
 		}
 	}
 
-	vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+	vector<vector<int>> subsetsWithDup(vector<int> &nums)
+	{
 		res.clear();
 		path.clear();
 		sort(nums.begin(), nums.end());

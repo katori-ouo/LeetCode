@@ -1,26 +1,30 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
-
-class Solution {
+/* 回溯 数的组合 */
+class Solution
+{
 public:
 	vector<vector<int>> res;
 	vector<int> path;
 
-	void backtracking(int n, int k, int startIdx) {
-		if (path.size() == k) {
+	void backtracking(int n, int k, int startIdx)
+	{
+		if (path.size() == k)
+		{
 			res.push_back(path);
 			return;
 		}
-		for (int i = startIdx; i <= n - (k - path.size()) + 1; i++) {
+		for (int i = startIdx; i <= n - (k - path.size()) + 1; i++)
+		{
 			path.push_back(i);
 			backtracking(n, k, i + 1);
 			path.pop_back();
 		}
 	}
 
-	vector<vector<int>> combine(int n, int k) {
+	vector<vector<int>> combine(int n, int k)
+	{
 		res.clear();
 		path.clear();
 		backtracking(n, k, 1);
@@ -28,6 +32,7 @@ public:
 	}
 };
 
-int main() {
+int main()
+{
 	return 0;
 }
