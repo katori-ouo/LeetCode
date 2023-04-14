@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/* 不同的二叉搜索树 */
 class Solution
 {
 public:

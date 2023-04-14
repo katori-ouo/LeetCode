@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+/* 0-1背包 字符串集合1和0的个数*/
 class Solution
 {
 public:

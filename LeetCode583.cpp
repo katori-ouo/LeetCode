@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
+/* 两个字符串的删除操作 */
 class Solution
 {
 public:

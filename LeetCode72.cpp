@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
+/* 两个字符串的编辑距离 */
 class Solution
 {
 public:

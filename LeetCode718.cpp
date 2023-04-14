@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+/* 最长重复子数组 */
 class Solution
 {
 public:

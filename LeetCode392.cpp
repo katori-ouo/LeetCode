@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 using namespace std;
+/* 判断子序列 */
 class Solution
 {
 public:

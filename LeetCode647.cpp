@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
-
+/* 回文子串个数 */
 /*
 双指针法
 class Solution

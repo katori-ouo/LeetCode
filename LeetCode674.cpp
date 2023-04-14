@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/* 最长连续递增序列 */
 class Solution
 {
 public:

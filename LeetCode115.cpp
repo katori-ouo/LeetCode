@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
+/* 子序列出现个数 */
 class Solution
 {
 public:

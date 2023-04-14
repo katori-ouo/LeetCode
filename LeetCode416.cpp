@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/* 0-1背包 分割等和子集*/
 class Solution
 {
 public:

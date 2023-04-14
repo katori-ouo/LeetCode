@@ -2,6 +2,7 @@
 #include <vector>
 #include <stack>
 using namespace std;
+/* 接雨水 */
 /*
 双指针优化的暴力解法
 按列求解

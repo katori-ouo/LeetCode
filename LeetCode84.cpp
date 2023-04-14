@@ -2,6 +2,7 @@
 #include <vector>
 #include <stack>
 using namespace std;
+/* 柱状图中的最大矩形 */
 /*
 双指针优化的暴力法
 class Solution

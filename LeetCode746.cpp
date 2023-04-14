@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/* 最小花费爬楼梯 */
 class Solution
 {
 public:

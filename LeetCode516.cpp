@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 using namespace std;
+/* 最长回文子序列 */
 class Solution
 {
 public:

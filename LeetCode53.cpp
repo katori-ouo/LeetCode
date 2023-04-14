@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/* 最大连续子序列和 */
 class Solution
 {
 public:

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+/* 0-1背包 最后一块石头的重量*/
 class Solution
 {
 public:
