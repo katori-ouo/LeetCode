@@ -142,7 +142,8 @@
 //         return result;
 //     }
 // };
-
+#include <iomanip>
+cout << fixed << setprecision(2) << i;
 // ! /*平衡二叉树*/
 class Solution
 {
