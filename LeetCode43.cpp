@@ -36,7 +36,7 @@ string addString(string num1, string num2)
 
 string myMultiply(string num1, int num2)
 {
-    if (num1 == "0" || num2 == "0")
+    if (num1 == "0" || num2 == 0)
         return "0";
     string res = "";
     int x = 0, y = 0;
